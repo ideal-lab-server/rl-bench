@@ -1,0 +1,47 @@
+benchmark:
+  name: "RL Benchmark"
+  version: "v1.2"
+
+training:
+  seeds: 5
+  device: "cpu"
+
+environment_budget:
+  Swimmer-v5: 500000
+  Hopper-v5: 1000000
+  Walker2d-v5: 1000000
+  HalfCheetah-v5: 1000000
+  Ant-v5: 2000000
+  Humanoid-v5: 5000000
+
+evaluation:
+  episodes: 50
+  deterministic: true
+
+logging:
+  frequency: 10000
+  directory: "logs"
+
+algorithms:
+  - A2C
+  - PPO
+  - DDPG
+  - TD3
+  - SAC
+
+environments:
+  discrete: []
+  continuous:
+    - Swimmer-v5
+    - Hopper-v5
+    - Walker2d-v5
+    - HalfCheetah-v5
+    - Ant-v5
+    - Humanoid-v5
+
+results:
+  reference: "results/reference"
+  summaries: "results/summaries"
+
+models:
+  reference: "models/reference"

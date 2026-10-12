@@ -1,0 +1,52 @@
+benchmark:
+
+  name: "RL Benchmark"
+  version: "v1.1"
+
+training:
+
+  seeds: 5
+  device: "cpu"
+
+environment_budget:
+
+  LunarLander-v3: 1000000
+  LunarLanderContinuous-v3: 1000000
+  BipedalWalker-v3: 5000000
+
+evaluation:
+
+  episodes: 50
+  deterministic: true
+
+logging:
+
+  frequency: 10000
+  directory: "logs"
+
+algorithms:
+
+  - A2C
+  - DQN
+  - PPO
+  - DDPG
+  - TD3
+  - SAC
+
+environments:
+
+  discrete:
+    - LunarLander-v3
+
+  continuous:
+    - LunarLanderContinuous-v3
+    - BipedalWalker-v3
+
+results:
+
+  reference: "results/reference"
+  summaries: "results/summaries"
+
+models:
+
+  reference: "models/reference"

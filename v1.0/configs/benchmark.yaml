@@ -1,0 +1,47 @@
+benchmark:
+  name: "RL Benchmark"
+  version: "v1.0"
+
+training:
+  seeds: 5
+  device: "cpu"
+
+environment_budget:
+  CartPole-v1: 100000
+  Acrobot-v1: 500000
+  MountainCar-v0: 1000000
+  MountainCarContinuous-v0: 300000
+  Pendulum-v1: 500000
+
+evaluation:
+  episodes: 50
+  deterministic: true
+
+logging:
+  frequency: 10000
+  directory: "logs"
+
+algorithms:
+  - A2C
+  - DQN
+  - PPO
+  - DDPG
+  - TD3
+  - SAC
+
+environments:
+  discrete:
+    - CartPole-v1
+    - Acrobot-v1
+    - MountainCar-v0
+
+  continuous:
+    - MountainCarContinuous-v0
+    - Pendulum-v1
+
+results:
+  reference: "results/reference"
+  summaries: "results/summaries"
+
+models:
+  reference: "models/reference"

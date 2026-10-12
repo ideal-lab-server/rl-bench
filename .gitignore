@@ -1,0 +1,20 @@
+# Generated benchmark artifacts
+**/logs/*
+!**/logs/.gitkeep
+
+**/models/reference/*
+!**/models/reference/.gitkeep
+
+**/results/reference/*
+!**/results/reference/.gitkeep
+
+# Python generated files
+__pycache__/
+*.py[cod]
+
+# Generated summary JSON files
+**/results/summaries/*.json
+
+# Generated training-related files
+**/results/summaries/training_* 
+**/plots/training_*
